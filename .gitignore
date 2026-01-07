@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+.mypy_cache/
+.pytest_cache/
+.venv/
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# Django-specific
+*.log
+*.pot
+local_settings.py
+db.sqlite3
+media/  # User-uploaded media files
+static/ # Generated static files (if collected locally for deployment)
+
+# IDE-specific (VS Code, PyCharm, etc.)
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
