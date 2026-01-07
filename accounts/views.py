@@ -1,3 +1,16 @@
 from django.shortcuts import render
+from django.views.generic import View
 
-# Create your views here.
+
+# class DashboardView(View):
+
+#     def get(self, request, *args, **kwargs):
+#         return render(request, "accounts/dashboard.html")
+
+
+class DashboardView(View):
+    def get(self, request, *args, **kwargs):
+        context = {}
+        context["name"] = "Everson Fernandes"
+        context["email"] = "fernandes_draw@hotmail.com"
+        return render(request, "accounts/dashboard.html", context)
