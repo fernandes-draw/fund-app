@@ -43,3 +43,12 @@ class Project(models.Model):
 
     def __str__(self):
         return self.code
+
+    def priority_color(self):
+        if self.priority == "BAIXA":
+            color = "success"
+        elif self.priority == "MÉDIA":
+            color = "warning"
+        else:
+            color = "danger"
+        return color
