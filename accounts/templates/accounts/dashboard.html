@@ -115,9 +115,11 @@
                         <tr>
                           <th>Código</th>
                           <th>Descrição</th>
+                          <th>Data Início</th>
                           <th>Status</th>
                           <th>Prioridade</th>
                           <th>Data Atualização</th>
+                          <th>Prazo de Entrega</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -129,11 +131,13 @@
                               >
                             </td>
                             <td>{{ project.description }}</td>
+                            <td>{{ project.start_date }}</td>
                             <td>{{ project.status.capitalize }}</td>
                             <td>
                               <span class="badge badge-{{ project.priority_color }}">{{ project.priority.capitalize }}</span>
                             </td>
                             <td>{{ project.updated_at }}</td>
+                            <td>{{ project.days_until_due }}</td>
                         </tr>
                         {% endfor %}
                         
