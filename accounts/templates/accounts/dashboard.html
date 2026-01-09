@@ -77,7 +77,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <h5 class="card-title">Projects</h5>
+          <h5 class="card-title">Projetos</h5>
 
           <div class="card-tools">
             <button
@@ -105,7 +105,7 @@
               <!-- TABLE: LATEST Projects -->
               <div class="card">
                 <div class="card-header border-transparent">
-                  <h3 class="card-title">ùltimos Projetos</h3>
+                  <h3 class="card-title">Últimos Projetos</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body p-0">
@@ -124,23 +124,25 @@
                       </thead>
                       <tbody>
                         {% for project in latest_projects %}
-                          <tr>
-                            <td>
-                              <a href="./pages/examples/project-detail.html"
-                                >{{ project.code }}</a
-                              >
-                            </td>
-                            <td>{{ project.description }}</td>
-                            <td>{{ project.start_date }}</td>
-                            <td>{{ project.status.capitalize }}</td>
-                            <td>
-                              <span class="badge badge-{{ project.priority_color }}">{{ project.priority.capitalize }}</span>
-                            </td>
-                            <td>{{ project.updated_at }}</td>
-                            <td>{{ project.days_until_due }}</td>
+                        <tr>
+                          <td>
+                            <a href="./pages/examples/project-detail.html"
+                              >{{ project.code }}</a
+                            >
+                          </td>
+                          <td>{{ project.description }}</td>
+                          <td>{{ project.start_date }}</td>
+                          <td>{{ project.status.capitalize }}</td>
+                          <td>
+                            <span
+                              class="badge badge-{{ project.priority_color }}"
+                              >{{ project.priority.capitalize }}</span
+                            >
+                          </td>
+                          <td>{{ project.updated_at }}</td>
+                          <td>{{ project.days_until_due }}</td>
                         </tr>
                         {% endfor %}
-                        
                       </tbody>
                     </table>
                   </div>
@@ -175,7 +177,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <h5 class="card-title">Tasks</h5>
+          <h5 class="card-title">Tarefas</h5>
 
           <div class="card-tools">
             <button
@@ -198,12 +200,12 @@
         <!-- /.card-header -->
         <div class="card-body">
           <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
               <!-- projects -->
-              <!-- TABLE: LATEST Projects -->
+              <!-- TABLE: LATEST Tasks -->
               <div class="card">
                 <div class="card-header border-transparent">
-                  <h3 class="card-title">Latest Tasks</h3>
+                  <h3 class="card-title">Últimas Tarefas</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body p-0">
@@ -211,93 +213,35 @@
                     <table class="table m-0">
                       <thead>
                         <tr>
-                          <th>Order ID</th>
-                          <th>Item</th>
+                          <th>Código</th>
+                          <th>Descrição</th>
+                          <th>Data Início</th>
                           <th>Status</th>
-                          <th>Popularity</th>
+                          <th>Prioridade</th>
+                          <th>Data Atualização</th>
+                          <th>Prazo de Entrega</th>
                         </tr>
                       </thead>
                       <tbody>
+                        {% for tasks in latest_tasks %}
                         <tr>
                           <td>
-                            <a href="./pages/examples/task-detail.html"
-                              >OR9842</a
+                            <a href="./pages/examples/tasks-detail.html"
+                              >{{ tasks.code }}</a
                             >
                           </td>
-                          <td>Call of Duty IV</td>
+                          <td>{{ tasks.description }}</td>
+                          <td>{{ tasks.start_date }}</td>
+                          <td>{{ tasks.status.capitalize }}</td>
                           <td>
-                            <span class="badge badge-success">Shipped</span>
-                          </td>
-                          <td>
-                            <div
-                              class="sparkbar"
-                              data-color="#00a65a"
-                              data-height="20"
+                            <span class="badge badge-{{ tasks.priority_color }}"
+                              >{{ tasks.priority.capitalize }}</span
                             >
-                              90,80,90,-70,61,-83,63
-                            </div>
                           </td>
+                          <td>{{ tasks.updated_at }}</td>
+                          <td>{{ tasks.days_until_due }}</td>
                         </tr>
-                        <tr>
-                          <td>
-                            <a href="./pages/examples/task-detail.html"
-                              >OR1848</a
-                            >
-                          </td>
-                          <td>Samsung Smart TV</td>
-                          <td>
-                            <span class="badge badge-warning">Pending</span>
-                          </td>
-                          <td>
-                            <div
-                              class="sparkbar"
-                              data-color="#f39c12"
-                              data-height="20"
-                            >
-                              90,80,-90,70,61,-83,68
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <a href="./pages/examples/task-detail.html"
-                              >OR7429</a
-                            >
-                          </td>
-                          <td>iPhone 6 Plus</td>
-                          <td>
-                            <span class="badge badge-danger">Delivered</span>
-                          </td>
-                          <td>
-                            <div
-                              class="sparkbar"
-                              data-color="#f56954"
-                              data-height="20"
-                            >
-                              90,-80,90,70,-61,83,63
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <a href="./pages/examples/task-detail.html"
-                              >OR7429</a
-                            >
-                          </td>
-                          <td>Samsung Smart TV</td>
-                          <td>
-                            <span class="badge badge-info">Processing</span>
-                          </td>
-                          <td>
-                            <div
-                              class="sparkbar"
-                              data-color="#00c0ef"
-                              data-height="20"
-                            >
-                              90,80,-90,70,-61,83,63
-                            </div>
-                          </td>
-                        </tr>
+                        {% endfor %}
                       </tbody>
                     </table>
                   </div>
@@ -306,9 +250,9 @@
                 <!-- /.card-body -->
                 <div class="card-footer clearfix">
                   <a
-                    href="./pages/examples/tasks.html"
+                    href="./pages/examples/projects.html"
                     class="btn btn-sm btn-secondary float-right"
-                    >View All Tasks</a
+                    >Ver Todos as Tarefas</a
                   >
                 </div>
                 <!-- /.card-footer -->
@@ -316,47 +260,6 @@
               <!-- /.card -->
             </div>
             <!-- /.col -->
-            <div class="col-md-4">
-              <p class="text-center">
-                <strong>Goal Completion</strong>
-              </p>
-
-              <div class="progress-group">
-                Add Products to Cart
-                <span class="float-right"><b>160</b>/200</span>
-                <div class="progress progress-sm">
-                  <div class="progress-bar bg-primary" style="width: 80%"></div>
-                </div>
-              </div>
-              <!-- /.progress-group -->
-
-              <div class="progress-group">
-                Complete Purchase
-                <span class="float-right"><b>310</b>/400</span>
-                <div class="progress progress-sm">
-                  <div class="progress-bar bg-danger" style="width: 75%"></div>
-                </div>
-              </div>
-
-              <!-- /.progress-group -->
-              <div class="progress-group">
-                <span class="progress-text">Visit Premium Page</span>
-                <span class="float-right"><b>480</b>/800</span>
-                <div class="progress progress-sm">
-                  <div class="progress-bar bg-success" style="width: 60%"></div>
-                </div>
-              </div>
-
-              <!-- /.progress-group -->
-              <div class="progress-group">
-                Send Inquiries
-                <span class="float-right"><b>250</b>/500</span>
-                <div class="progress progress-sm">
-                  <div class="progress-bar bg-warning" style="width: 50%"></div>
-                </div>
-              </div>
-              <!-- /.progress-group -->
-            </div>
             <!-- /.col -->
           </div>
           <!-- /.row -->
