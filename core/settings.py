@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     # Custom App's
     "accounts",
     "projects",
+    "tasks",
     "products",
 ]
 
