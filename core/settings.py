@@ -119,4 +119,4 @@ STATICFILES_DIRS = [
 MEDIA_UTL = "/media/"
 MEDIA_ROOT = BASE_DIR
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['192.168.18.5', "127.0.0.1", "localhost"]
