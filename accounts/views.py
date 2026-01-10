@@ -11,13 +11,16 @@ class DashboardView(View):
         latest_projects = Project.objects.all()[:5]
         latest_tasks = Task.objects.all()[:5]
         latest_members = Profile.objects.all()[:8]
-        latest_notifications = Notification.objects.for_user(request.user)
 
         context = {}
+
+        if request.user.is_authenticated:
+            latest_notifications = Notification.objects.for_user(request.user)
+            context["latest_notifications"] = latest_notifications[:3]
+            context["notification_count"] = latest_notifications.count()
+
         context["latest_projects"] = latest_projects
         context["latest_tasks"] = latest_tasks
         context["latest_members"] = latest_members
-        context["latest_notifications"] = latest_notifications[:3]
-        context["notification_count"] = latest_notifications.count()
 
         return render(request, "accounts/dashboard.html", context)
