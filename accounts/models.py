@@ -17,6 +17,10 @@ class Profile(models.Model):
     date_of_birth = models.DateField(null=True, blank=True)
     join_data = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        verbose_name = "Perfil"
+        verbose_name_plural = "Perfis"
+
     def __str__(self):
         return self.user.username
 

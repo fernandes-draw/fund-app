@@ -40,7 +40,9 @@ class Task(models.Model):
         return self.name
 
     class Meta:
-        ordering = ["-created_at",]
+        ordering = ["-created_at"]
+        verbose_name = "Tarefa"
+        verbose_name_plural = "Tarefas"
 
     def days_until_due(self):
         if self.due_date:

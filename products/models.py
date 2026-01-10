@@ -9,7 +9,10 @@ class Product(models.Model):
     client = models.CharField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    
+
+    class Meta:
+        verbose_name = "Produto"
+        verbose_name_plural = "Produtos"
+
     def __str__(self):
         return self.code
-    

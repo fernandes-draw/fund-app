@@ -51,6 +51,8 @@ class Project(models.Model):
 
     class Meta:
         ordering = ["-created_at",]
+        verbose_name = "Projeto"
+        verbose_name_plural = "Projetos"
 
     def days_until_due(self):
         if self.due_date:
